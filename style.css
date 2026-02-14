@@ -9,16 +9,39 @@ h4,
 .font-serif {
   font-family: "Playfair Display", serif;
 }
+
+/* CONTAINER DA LOGO */
 .div-logo {
   display: flex;
   height: 100%;
-  width: 100%;
-  justify-content: center;
+  flex-grow: 1;
+  /* Alinhamento sempre à esquerda para acomodar logo horizontal larga */
+  justify-content: flex-start;
   align-items: center;
 }
+
+/* AJUSTE LOGO INTELIGENTE */
 .logo {
-  height: 170px;
+  /* Permite que a largura seja automática baseada na altura */
+  width: auto;
+  height: auto;
+
+  /* AJUSTADO: 55px cabe bem no header h-20 sem ficar minúsculo */
+  max-height: 55px;
+
+  /* Garante que a imagem renderize com qualidade */
+  object-fit: contain;
+  object-position: left center;
 }
+
+/* Tablet e Desktop */
+@media (min-width: 768px) {
+  .logo {
+    /* AJUSTADO: 85px ocupa bem o header h-28 (112px) */
+    max-height: 85px;
+  }
+}
+
 .btn-falar-com-especialista {
   width: 200px;
   display: flex;
@@ -101,17 +124,10 @@ h4,
     margin-right: 0;
   }
   .div-img-adv {
-    height: 800px;
-    width: 600px;
+    width: 100%;
   }
 }
 @media (max-width: 768px) {
-  .div-logo {
-    justify-content: left;
-  }
-  .logo {
-    margin-top: 10px;
-  }
   .div-info-footer {
     flex-direction: column;
   }
@@ -134,12 +150,15 @@ h4,
   display: flex;
   justify-content: center;
 }
+
 .div-main-socios {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  height: 100%;
 }
+
 .div-socios {
   display: flex;
   flex-direction: column;

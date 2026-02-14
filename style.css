@@ -169,6 +169,9 @@ h4,
 .txt-socio {
   text-align: center;
 }
+.txt-apresentação {
+  text-align: justify;
+}
 .nav-menu-mobile {
   display: flex;
   justify-content: center;
